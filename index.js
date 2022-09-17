@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const authRouter=require('./routes/auth')
 const userRouter=require('./routes/user')
 const productRouter=require('./routes/product')
+const orderRouter=require('./routes/order')
 dotenv.config();
 
 mongoose
@@ -16,5 +17,5 @@ app.use(express.json());
 app.use('/api/auth',authRouter)
 app.use('/api/user',userRouter)
 app.use('/api/product',productRouter)
-
+app.use('/api/order',orderRouter)
 app.listen(process.env.PORT || 5000, () => console.log("first"));
